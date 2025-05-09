@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Okala.Domain", "Okala.Domain\Okala.Domain.csproj", "{402DA848-EF10-4F12-9FE5-F664366FEE87}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKala.Application", "OKala.Application\OKala.Application.csproj", "{2DE9EFBA-A69B-4E08-BA5D-B03CE2999EF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKala.Infrastructure", "OKala.Infrastructure\OKala.Infrastructure.csproj", "{F18A1A89-8A75-4E20-8524-C0A1EA97322E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OKala.Test", "OKala.Test\OKala.Test.csproj", "{2A646345-1811-484C-B5FA-E09A26D28789}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OKala.Api", "OKala.Api\OKala.Api.csproj", "{292BCA74-10AC-4F96-A024-1A62490B80C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{402DA848-EF10-4F12-9FE5-F664366FEE87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{402DA848-EF10-4F12-9FE5-F664366FEE87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{402DA848-EF10-4F12-9FE5-F664366FEE87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{402DA848-EF10-4F12-9FE5-F664366FEE87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DE9EFBA-A69B-4E08-BA5D-B03CE2999EF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DE9EFBA-A69B-4E08-BA5D-B03CE2999EF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DE9EFBA-A69B-4E08-BA5D-B03CE2999EF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DE9EFBA-A69B-4E08-BA5D-B03CE2999EF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F18A1A89-8A75-4E20-8524-C0A1EA97322E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F18A1A89-8A75-4E20-8524-C0A1EA97322E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F18A1A89-8A75-4E20-8524-C0A1EA97322E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F18A1A89-8A75-4E20-8524-C0A1EA97322E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A646345-1811-484C-B5FA-E09A26D28789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A646345-1811-484C-B5FA-E09A26D28789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A646345-1811-484C-B5FA-E09A26D28789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A646345-1811-484C-B5FA-E09A26D28789}.Release|Any CPU.Build.0 = Release|Any CPU
+		{292BCA74-10AC-4F96-A024-1A62490B80C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{292BCA74-10AC-4F96-A024-1A62490B80C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{292BCA74-10AC-4F96-A024-1A62490B80C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{292BCA74-10AC-4F96-A024-1A62490B80C7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B0F323C2-0C06-4001-833E-09F4183F778F}
+	EndGlobalSection
+EndGlobal
