@@ -18,8 +18,8 @@ namespace OKala.Application.ValidationServices
                 .ToList();
 
             var message = string.Concat(
-                "Bad request",
-                Environment.NewLine,
+                //"Bad request",
+                //Environment.NewLine,
                 string.Join(Environment.NewLine, errors));
 
             return response.WriteResponseAsync(HttpStatusCode.BadRequest, new ApiResult(false, message));

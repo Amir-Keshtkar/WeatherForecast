@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.WebRequestMethods;
+﻿using System.Net;
 
 namespace OKala.Application.Exceptions
 {
@@ -28,9 +21,5 @@ namespace OKala.Application.Exceptions
             HttpStatusCode = httpStatusCode;
         }
 
-        protected AppException(SerializationInfo info, StreamingContext context, HttpStatusCode httpStatusCode = HttpStatusCode.BadRequest) : base(info, context)
-        {
-            HttpStatusCode = httpStatusCode;
-        }
     }
 }
