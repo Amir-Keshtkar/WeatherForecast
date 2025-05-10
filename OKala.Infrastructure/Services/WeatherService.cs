@@ -42,16 +42,18 @@ namespace OKala.Infrastructure.Services
         {
             var client = _httpClientFactory.CreateClient("WeatherApi");
 
-            var result = await client.GetFromJsonAsync<List<GeoLocation>>(_url + $"/geo/1.0/direct?q={cityName}&limit={1}&appid={_apiKey}", cancellationToken: cancellationToken);
-            if (result is null || result.Count == 0)
+            //var result = await client.GetFromJsonAsync<List<GeoLocation>>(_url + $"/geo/1.0/direct?q={cityName}&limit={1}&appid={_apiKey}", cancellationToken: cancellationToken);
+            //if (result is null || result.Count == 0)
+            //return null;
+            var response = await client.GetAsync(_url + $"/geo/1.0/direct?q={cityName}&limit={1}&appid={_apiKey}", cancellationToken: cancellationToken);
+            if (!response.IsSuccessStatusCode)
                 return null;
-            //var response = await client.GetAsync(_url + $"/geo/1.0/direct?q={cityName}&limit={1}&appid={_apiKey}", cancellationToken: cancellationToken);
-            //if (!response.IsSuccessStatusCode)
-            //    return null;
 
-            //var content = await response.Content.ReadAsStringAsync(cancellationToken);
-            //var result = JsonConvert.DeserializeObject<List<GeoLocation>>(content);
+            var content = await response.Content.ReadAsStringAsync(cancellationToken);
+            var result = JsonConvert.DeserializeObject<List<GeoLocation>>(content);
             var city = result.FirstOrDefault();
+            if (city is null)
+                return null;
             return (city.Lat, city.Lon);
         }
 
