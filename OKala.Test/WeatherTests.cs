@@ -8,6 +8,7 @@ using Okala.Domain.AggregateRoots;
 using Okala.Domain.Contracts;
 using static Okala.Domain.AggregateRoots.PollutionData;
 using System;
+using OKala.Application.Exceptions;
 
 namespace OKala.Test;
 
@@ -33,20 +34,22 @@ public class WeatherTests
     {
         // Arrange
         var weatherServiceMock = new Mock<IWeatherService>();
-        weatherServiceMock.Setup(x => x.GetCordByCityNameAsync("Gotham", It.IsAny<CancellationToken>()))
-            .ReturnsAsync(new ValueTuple<double, double>());
+        weatherServiceMock.Setup(x => x.GetCordByCityNameAsync("shiganshina", It.IsAny<CancellationToken>()))
+            .ReturnsAsync(new ValueTuple<double, double>?());
+        //.ReturnsAsync(Task.FromResult<(double Lat, double Lon)?>(null));
 
-        var validator = new GetWeatherInfoValidator();
-        var query = new GetWeatherInfoQuery { CityName = "Gotham" };
+        var mapperMock = new Mock<IMapper>();
+        var handler = new GetWeatherInfoQuery.Handler(mapperMock.Object, weatherServiceMock.Object);
+        var query = new GetWeatherInfoQuery { CityName = "shiganshina" };
 
         // Act
-        var result = await validator.ValidateAsync(query, CancellationToken.None);
+        Func<Task> act = async () => await handler.Handle(query, CancellationToken.None);
 
         // Assert
-        result.Errors
-            .Should().ContainSingle()
-            ;//.Should().Match(e => e.PropertyName == nameof(GetWeatherInfoQuery.CityName)
-                                    //&& e.ErrorMessage == "شهر یافت نشد");
+        await act.Should().ThrowAsync<AppException>()
+            .WithMessage("شهر یافت نشد");
+
+        weatherServiceMock.Verify(x => x.GetCordByCityNameAsync("shiganshina", It.IsAny<CancellationToken>()), Times.Once());
     }
 
     [Fact]
