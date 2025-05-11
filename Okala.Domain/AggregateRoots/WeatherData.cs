@@ -17,52 +17,49 @@ namespace Okala.Domain.AggregateRoots
         public int Timezone { get; set; }
         public string Name { get; set; }
         public int Cod { get; set; }
-        public class MainData { public double Temp { get; set; } public double Feels_Like { get; set; } public double Temp_Min { get; set; } public double Temp_Max { get; set; } public int Pressure { get; set; } public int Humidity { get; set; } public int Sea_Level { get; set; } public int Grnd_Level { get; set; } }
-    }
 
-    public class Coord { public double Lon { get; set; } public double Lat { get; set; } }
-    public class Weather { public int Id { get; set; } public string Main { get; set; } public string Description { get; set; } public string Icon { get; set; } }
-    public class Wind { public double Speed { get; set; } public int Deg { get; set; } }
-    public class Clouds { public int All { get; set; } }
-    public class Sys { public int Type { get; set; } public int Id { get; set; } public string Country { get; set; } public long Sunrise { get; set; } public long Sunset { get; set; } }
-
-    public class GeoLocation
-    {
-        public string Name { get; set; }
-        public Dictionary<string, string> Local_names { get; set; }
-        public double Lat { get; set; }
-        public double Lon { get; set; }
-        public string Country { get; set; }
-    }
-
-    public class PollutionData
-    {
-        public Coord Coord { get; set; }
-        public List<Polluts> List { get; set; }
-
-        public class Polluts
+        public class MainData
         {
-            public MainData Main { get; set; }
-            public Component Components { get; set; }
-            public long DT { get; set; }
-
-            public class Component
-            {
-                public double CO { get; set; }
-                public double NO { get; set; }
-                public double NO2 { get; set; }
-                public double O3 { get; set; }
-                public double SO2 { get; set; }
-                public double PM2_5 { get; set; }
-                public double PM10 { get; set; }
-                public double NH3 { get; set; }
-            }
-            public class MainData
-            {
-                public int AQI { get; set; }
-            }
+            public double Temp { get; set; }
+            public double Feels_Like { get; set; }
+            public double Temp_Min { get; set; }
+            public double Temp_Max { get; set; }
+            public int Pressure { get; set; }
+            public int Humidity { get; set; }
+            public int Sea_Level { get; set; }
+            public int Grnd_Level { get; set; }
         }
+    }
 
+    public class Coord
+    {
+        public double Lon { get; set; }
+        public double Lat { get; set; }
+    }
+    public class Weather
+    {
+        public int Id { get; set; }
+        public string Main { get; set; }
+        public string Description { get; set; }
+        public string Icon { get; set; }
+    }
+
+    public class Wind
+    {
+        public double Speed { get; set; }
+        public int Deg { get; set; }
+    }
+    public class Clouds
+    {
+        public int All { get; set; }
+    }
+    public class Sys
+    {
+        public int Type { get; set; }
+        public int Id { get; set; }
+        public string Country { get; set; }
+        public long Sunrise { get; set; }
+        public long Sunset { get; set; }
     }
 
 }
